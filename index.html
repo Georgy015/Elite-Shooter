@@ -15,42 +15,40 @@
 
   <div id="hud" hidden>
     <div class="hud-top">
-      <div class="stat"><span class="label">Score</span><span id="score" class="value">0</span></div>
-      <div class="stat timer"><span class="label">Time</span><span id="time" class="value">60</span></div>
-      <div class="stat"><span class="label">Streak</span><span id="streak" class="value">0</span></div>
+      <div class="stat"><span class="label">Level</span><span id="level" class="value">1</span></div>
+      <div class="stat" id="scoreBox"><span class="label">Score</span><span class="value"><span id="score">0</span> <small id="target">/ 0</small></span></div>
+      <div class="stat timer" id="timerBox"><span class="label">Time</span><span id="time" class="value">30</span></div>
     </div>
     <div id="crosshair"></div>
     <div id="popup"></div>
     <div id="zone"></div>
-    <div id="power"><div id="powerFill"></div></div>
+    <div id="power"><div id="powerZone" hidden></div><div id="powerFill"></div></div>
 
     <div id="touch" hidden>
-      <div id="stick"><div id="knob"></div></div>
       <button id="shootBtn" type="button">SHOOT</button>
     </div>
   </div>
 
   <div id="overlay">
     <div class="panel">
-      <h1>ELITE <span>SHOOTER</span></h1>
-      <p id="overlayMsg" class="msg">Sink as many shots as you can in 60 seconds.</p>
-      <div id="results" hidden>
-        <div><span id="finalScore">0</span><small>points</small></div>
-        <div><span id="finalMakes">0/0</span><small>shots made</small></div>
-        <div><span id="finalBest">0</span><small>best</small></div>
-      </div>
+      <p id="kicker" class="kicker" hidden></p>
+      <h1 id="title">ELITE <span>SHOOTER</span></h1>
+      <p id="overlayMsg" class="msg"></p>
+      <div id="results" hidden></div>
       <button id="playBtn" type="button">PLAY</button>
-      <ul class="controls" id="controlsDesktop">
-        <li><kbd>Mouse</kbd> look around</li>
-        <li><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> move</li>
-        <li><kbd>Hold click</kbd> charge power — <kbd>release</kbd> to shoot</li>
-        <li><kbd>Esc</kbd> pause</li>
-      </ul>
-      <ul class="controls" id="controlsTouch" hidden>
-        <li>Left stick to move, drag the screen to look</li>
-        <li>Hold SHOOT to charge power, release to shoot</li>
-      </ul>
-      <p class="hint">Aim at the rim — the dots show the start of your arc. 3 points from beyond the arc, +1 for a swish.</p>
+      <div id="help">
+        <ul class="controls" id="controlsDesktop">
+          <li><kbd>Mouse</kbd> aim</li>
+          <li><kbd>Hold click</kbd> or <kbd>Space</kbd> charge power — <kbd>release</kbd> to shoot</li>
+          <li><kbd>Esc</kbd> pause</li>
+        </ul>
+        <ul class="controls" id="controlsTouch" hidden>
+          <li>Drag the screen to aim</li>
+          <li>Hold SHOOT to charge power, release to shoot</li>
+        </ul>
+        <p class="hint">Release inside the green zone to shoot on target. 3 points beyond the arc, +1 for a swish, +2 for a bank shot off the glass. Extra points carry over to the next level.</p>
+        <button id="resetBtn" type="button" hidden>Start over from level 1</button>
+      </div>
     </div>
   </div>
 
